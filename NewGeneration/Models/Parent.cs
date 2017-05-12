@@ -12,6 +12,7 @@ namespace NewGeneration.Models
         public string Name { get; set; }
         public string MiddleName { get; set; }
         public int Phone { get; set; }
+        public DateTime StartLearning { get; set; }
         public int PupilId { get; set; }
     }
 }

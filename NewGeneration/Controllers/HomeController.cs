@@ -20,5 +20,21 @@ namespace NewGeneration.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Add(int id)
+        {
+            ViewBag.PupilId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public string Buy(Parent parents)
+        {
+            parents.StartLearning = DateTime.Now;
+            db.Parents.Add(parents);
+            db.SaveChanges();
+            return "Thanks, " + parents.Name + " " + parents.MiddleName + ", for begin learning!";
+        }
+
     }
 }

@@ -3,28 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NewGeneration.Models;
 
 namespace NewGeneration.Controllers
 {
     public class HomeController : Controller
     {
+        PupilContext db = new PupilContext();
+
         public ActionResult Index()
         {
-            return View();
-        }
+            IEnumerable<Pupil> pupils = db.Pupils;
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Pupils = pupils;
 
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

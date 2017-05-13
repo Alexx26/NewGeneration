@@ -28,7 +28,7 @@ namespace NewGeneration.Controllers
         }
 
         [HttpPost]
-        public string Buy(Parent parents)
+        public string Add(Parent parents)
         {
             parents.StartLearning = DateTime.Now;
             db.Parents.Add(parents);

@@ -1,37 +1,27 @@
 ﻿@*Create Master Page.*@
 
 @{ 
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width"/>
-        <title>Language School</title>
-    </head>
-    <body>
-        <div>
-            <h3>Add Pupil</h3>
-            <table>
-                <tr>
-                    <td><p>Surname</p></td>
-                    <td><p>Name</p></td>
-                    <td><p>Birthday</p></td>
-                    <td><p>Phone</p></td>
-                </tr>
-                @foreach(var p in ViewBag.Pupils)
-                {
-                    <tr>
-                        <td><p>@p.Surname</p></td>
-                        <td><p>@p.Name</p></td>
-                        <td><p>@p.Birthday</p></td>
-                        <td><p>@p.Phone</p></td>
-                        <td><p><a href="/Home/Add/@p.Id">Add</a></p></td>
-                    </tr>
-                }
-            </table>
-        </div>
-    </body>
-</html>
+<div>
+    <h3>Add Pupil</h3>
+    <table>
+        <tr>
+            <td><p>Surname</p></td>
+            <td><p>Name</p></td>
+            <td><p>Birthday</p></td>
+            <td><p>Phone</p></td>
+        </tr>
+        @foreach(var p in ViewBag.Pupils)
+        {
+            <tr>
+                <td><p>@p.Surname</p></td>
+                <td><p>@p.Name</p></td>
+                <td><p>@p.Birthday</p></td>
+                <td><p>@p.Phone</p></td>
+                <td><p><a href="/Home/Add/@p.Id">Add</a></p></td>
+            </tr>
+        }
+    </table>
+</div>
